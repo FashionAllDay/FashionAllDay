@@ -37,94 +37,92 @@
         <section id="blog" class="blog-section">
             <div class="container">
                 <h2>Latest Posts</h2>
-                <div id="posts">
-                    <!-- Blog posts will be inserted here by JavaScript -->
+                <div id="posts-container">
+                    <div class="post">
+                        <a href="post1.html">
+                            <img src="post1b.png" alt="Post Image">
+                            <div class="post-content">
+                                <h3>The Ultimate Guide to Men's Streetwear Fashion</h3>
+                                <p>Streetwear has transcended from a subculture to a global phenomenon, influencing mainstream fashion with its blend of comfort, individuality, and edge.</p>
+                                <div class="post-footer">
+                                    <span class="author">By Danial</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="post">
+                        <a href="post2.html">
+                            <img src="images/shoe.jpg" alt="Post Image">
+                            <div class="post-content">
+                                <h3>Streetwear Accessories</h3>
+                                <p>Accessories play a crucial role in completing your streetwear look, adding that final touch that makes your outfit pop.</p>
+                                <div class="post-footer">
+                                    <span class="author">By Danial</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="post">
+                        <a href="post3.html">
+                            <img src="summer.png" alt="Post Image">
+                            <div class="post-content">
+                                <h3>The Ultimate Guide to Men's Summer Outfits: Stay Cool and Stylish</h3>
+                                <p>Summer is the perfect time to embrace lighter fabrics, fresh colors, and more relaxed styles.</p>
+                                <div class="post-footer">
+                                    <span class="author">By Danial</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button id="loadMoreBtn" class="load-more-btn">Load More</button>
+                    <button id="showLessBtn" class="show-less-btn" style="display: none;">Show Less</button>
                 </div>
             </div>
         </section>
 
-        <div class="post-section">
-            <div class="post">
-                <a href="post1.html">
-                <img src="post1b.png" alt="Post Image">
-                <div class="post-content">
-                    <h3>The Ultimate Guide to Men's Streetwear Fashion</h3>
-                    <p>Streetwear has transcended from a subculture to a global phenomenon, influencing mainstream fashion with its blend of comfort, individuality, and edge. If you're looking to elevate your streetwear game, here's everything you need to know about men's streetwear fashion.</p>
-                    <div class="post-footer">
-                        <span class="author">By Danial</span>
-                    </div>
+        <!-- New About section at the bottom -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2>About FashionAllDay</h2>
+                <div class="about-content">
+                    <p>Welcome to FashionAllDay, your go-to source for the latest trends, style tips, and men's fashion insights. We're passionate about helping you express yourself through fashion and feel confident in your personal style.</p>
+                    <p>Our team of fashion enthusiasts and industry experts work tirelessly to bring you up-to-date information on everything from streetwear to haute couture. Whether you're looking for outfit inspiration, shopping guides, or in-depth articles on fashion history, we've got you covered.</p>
+                    <p>Join our community of fashion lovers and stay ahead of the curve with FashionAllDay!</p>
                 </div>
-                </a>
             </div>
-        
-            <div class="post">
-                <a href="post2.html">
-                <img src="images/shoe.jpg" alt="Post Image">
-                <div class="post-content">
-                    <h3>Streetwear Accessories</h3>
-                    <p>Accessories play a crucial role in completing your streetwear look, adding that final touch that makes your outfit pop. Whether you're going for a minimalist vibe or bold statement pieces.</p>
-                    <div class="post-footer">
-                        <span class="author">By Danial</span>
-                    </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form action="https://formspree.io/f/xnnayyar" method="POST">
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
                 </div>
-                </a>
-            </div>
-        
-            <div class="post">
-                <a href="post3.html">
-                <img src="summer.png" alt="Post Image">
-                <div class="post-content">
-                    <h3>The Ultimate Guide to Men’s Summer Outfits: Stay Cool and Stylish</h3>
-                    <p>Summer is the perfect time to embrace lighter fabrics, fresh colors, and more relaxed styles.</p>
-                    <div class="post-footer">
-                        <span class="author">By Danial</span>
-                    </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
                 </div>
-                </a>
+                <div>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <div>
+                    <button type="submit">Send</button>
+                </div>
+            </form>
+        </section>
+
+        <footer>
+            <div class="container">
+                <p>&copy; FashionAllDay. All Rights Reserved.</p>
+                <img id="footer-logo" src="fashion-2.png" alt="FashionAllDay Logo">
             </div>
-        </div>
+        </footer>
+
+        <script src="scripts.js"></script>
     </main>
-
-    <!-- New About section at the bottom -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <h2>About FashionAllDay</h2>
-            <div class="about-content">
-                <p>Welcome to FashionAllDay, your go-to source for the latest trends, style tips, and men's fashion insights. We're passionate about helping you express yourself through fashion and feel confident in your personal style.</p>
-                <p>Our team of fashion enthusiasts and industry experts work tirelessly to bring you up-to-date information on everything from streetwear to haute couture. Whether you're looking for outfit inspiration, shopping guides, or in-depth articles on fashion history, we've got you covered.</p>
-                <p>Join our community of fashion lovers and stay ahead of the curve with FashionAllDay!</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <form action="https://formspree.io/f/xnnayyar" method="POST">
-            <div>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div>
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-            </div>
-            <div>
-                <button type="submit">Send</button>
-            </div>
-        </form>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; FashionAllDay. All Rights Reserved.</p>
-            <img id="footer-logo" src="fashion-2.png" alt="FashionAllDay Logo">
-        </div>
-    </footer>
-
-    <script src="scripts.js"></script>
 </body>
 </html>
