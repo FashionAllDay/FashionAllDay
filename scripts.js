@@ -43,17 +43,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // About button functionality
     const aboutBtn = document.getElementById('about-btn');
-    if (aboutBtn) {
+    const aboutBtnMobile = document.getElementById('about-btn-mobile');
+    const aboutSection = document.getElementById('about');
+    if (aboutBtn && aboutSection) {
         aboutBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            const aboutSection = document.getElementById('about');
-            if (aboutSection) {
-                // If we're on the same page as the about section
-                smoothScrollTo(aboutSection);
-            } else {
-                // If we're on a different page, navigate to index.html#about
-                window.location.href = 'index.html#about';
-            }
+            smoothScrollTo(aboutSection);
+        });
+    }
+    if (aboutBtnMobile && aboutSection) {
+        aboutBtnMobile.addEventListener('click', function(e) {
+            e.preventDefault();
+            smoothScrollTo(aboutSection);
         });
     }
 
@@ -83,22 +84,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (targetElement) {
                     smoothScrollTo(targetElement);
                 }
-            }
-        });
-    });
-
-    // Post links functionality
-    const postLinks = document.querySelectorAll('a[href$=".html"]');
-    postLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const postId = this.getAttribute('href').replace('.html', '');
-            const postElement = document.getElementById(postId);
-            if (postElement) {
-                smoothScrollTo(postElement);
-            } else {
-                // If the post is not on the current page, navigate to it
-                window.location.href = this.getAttribute('href');
             }
         });
     });
@@ -143,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
         newPost.className = 'post';
         newPost.innerHTML = `
             <a href="post4.html">
-                <img src="images/DiorB.jpg" alt="Post Image">
+                <img src="images/Dior.jpg" alt="Post Image">
                 <div class="post-content">
                     <h3>Best Men's Fragrances for 2024: Elevate Your Scent Game</h3>
                     <p>As we enter 2024, men's fragrance trends are evolving toward bolder, more refined scents. From everyday wear to special occasions, the right fragrance can enhance your style and leave a lasting impression.</p>
