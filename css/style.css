@@ -15,6 +15,23 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    .post-content h3 {
+        font-size: 20px;
+    }
+
+    .post-content p {
+        font-size: 16px;
+    }
 }
 
 .container {
@@ -119,6 +136,79 @@ body {
     .pinterest-btn {
         margin-top: 0.5rem;
     }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    .post {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .post img {
+        height: auto;
+    }
+
+    .post-content {
+        padding: 10px;
+    }
+
+    .load-more-btn, .show-less-btn {
+        width: 100%;
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    .button-container {
+        padding: 10px 0;
+    }
+
+    .hamburger-menu {
+        display: block;
+        position: relative;
+    }
+
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+        font-size: 24px;
+        padding: 10px;
+    }
+
+    .mobile-nav {
+        display: none;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+    }
+
+    .mobile-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .mobile-nav ul li {
+        border-bottom: 1px solid #444;
+    }
+
+    .mobile-nav ul li a {
+        display: block;
+        padding: 10px;
+        color: white;
+        text-decoration: none;
+    }
+
+    #menu-toggle:checked + .menu-icon + .mobile-nav {
+        display: block;
+    }
+
+    #posts-container {
+        flex-direction: column;
+    }
 }
 
 /* Blog Section */
@@ -136,6 +226,12 @@ body {
     flex-wrap: wrap;
     gap: 30px;
     margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+    #posts-container {
+        flex-direction: column;
+    }
 }
 
 .post {
@@ -218,6 +314,9 @@ body {
     border-radius: 3px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    padding: 15px 20px;
+    font-size: 16px;
+    border-radius: 5px;
 }
 
 .load-more-btn:hover, .show-less-btn:hover {
@@ -378,6 +477,11 @@ li {
 @media (max-width: 768px) {
     .gallery-container figure {
         width: calc(50% - 20px);
+    }
+
+    .load-more-btn, .show-less-btn {
+        padding: 20px;
+        font-size: 18px;
     }
 }
 
@@ -653,4 +757,9 @@ a:hover, .blog-post a:hover, .post-content a:hover {
 
 html {
     scroll-behavior: smooth;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
