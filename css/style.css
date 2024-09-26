@@ -1,13 +1,4 @@
-/* Global Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Import fonts */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+Pro:wght@400;600&display=swap');
-
+/* Base styles */
 body {
     font-family: 'Source Sans Pro', sans-serif;
     line-height: 1.6;
@@ -19,32 +10,54 @@ body {
     line-height: 1.5;
 }
 
-@media (max-width: 768px) {
-    body {
-        font-size: 18px;
-        line-height: 1.6;
-    }
-
-    .post-content h3 {
-        font-size: 20px;
-    }
-
-    .post-content p {
-        font-size: 16px;
-    }
-}
-
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
 }
 
-/* Header Styles */
+/* Typography */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #2c3e50;
+}
+
+h2 {
+    font-size: 2.25rem;
+    color: #34495e;
+}
+
+h3 {
+    font-size: 1.75rem;
+    color: #7f8c8d;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+ul, ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* Header styles */
 .site-header {
     background-color: #ffffff;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    position: sticky;
     top: 0;
     z-index: 1000;
     padding: 20px 0;
@@ -113,105 +126,7 @@ body {
     height: 20px;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-    .header-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .logo {
-        margin-bottom: 1rem;
-    }
-
-    .main-nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .main-nav li {
-        margin: 0.5rem;
-    }
-
-    .pinterest-btn {
-        margin-top: 0.5rem;
-    }
-
-    .container {
-        padding: 0 10px;
-    }
-
-    .post {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .post img {
-        height: auto;
-    }
-
-    .post-content {
-        padding: 10px;
-    }
-
-    .load-more-btn, .show-less-btn {
-        width: 100%;
-        padding: 15px;
-        font-size: 16px;
-    }
-
-    .button-container {
-        padding: 10px 0;
-    }
-
-    .hamburger-menu {
-        display: block;
-        position: relative;
-    }
-
-    .menu-icon {
-        display: block;
-        cursor: pointer;
-        font-size: 24px;
-        padding: 10px;
-    }
-
-    .mobile-nav {
-        display: none;
-        position: absolute;
-        top: 40px;
-        left: 0;
-        width: 100%;
-        background-color: #333;
-    }
-
-    .mobile-nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .mobile-nav ul li {
-        border-bottom: 1px solid #444;
-    }
-
-    .mobile-nav ul li a {
-        display: block;
-        padding: 10px;
-        color: white;
-        text-decoration: none;
-    }
-
-    #menu-toggle:checked + .menu-icon + .mobile-nav {
-        display: block;
-    }
-
-    #posts-container {
-        flex-direction: column;
-    }
-}
-
-/* Blog Section */
+/* Blog section styles */
 #blog {
     margin: 2rem 0;
 }
@@ -222,31 +137,61 @@ body {
 }
 
 #posts-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin-bottom: 40px;
-}
-
-@media (max-width: 768px) {
-    #posts-container {
-        flex-direction: column;
-    }
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 .post {
-    width: calc(33.33% - 20px);
-    margin-bottom: 30px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    margin: 0 0 20px 0;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.post img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.post-content {
+    width: 100%;
+    padding: 10px 0;
+}
+
+/* Tablet layout */
+@media (min-width: 768px) {
+    #posts-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .post {
+        width: calc(50% - 10px);
+    }
+}
+
+/* Desktop layout */
+@media (min-width: 1080px) {
+    .post {
+        width: calc(33.33% - 13.33px);
+    }
+}
+
+/* Refined post styles */
+.post {
     background-color: #ffffff;
     border: 1px solid #e0e0e0;
+    border-radius: 8px;
     overflow: hidden;
-    position: relative;
+    transition: box-shadow 0.3s ease;
 }
 
 .post:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .post img {
@@ -257,7 +202,6 @@ body {
 
 .post-content {
     padding: 20px;
-    background-color: #ffffff;
 }
 
 .post-content h3 {
@@ -268,28 +212,16 @@ body {
 
 .post-content p {
     font-size: 14px;
-    line-height: 1.5;
+    line-height: 1.6;
     color: #666;
     margin-bottom: 15px;
 }
 
 .post-footer {
     border-top: 1px solid #e0e0e0;
-    padding-top: 10px;
+    padding-top: 15px;
     font-size: 12px;
     color: #999;
-}
-
-.post::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 0 30px 30px;
-    border-color: transparent transparent #f8f8f8 transparent;
 }
 
 .button-container {
@@ -450,94 +382,32 @@ li {
 .gallery-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
     gap: 20px;
+    justify-content: center;
 }
 
 .gallery-container figure {
     margin: 0;
-    width: calc(33.333% - 20px); /* Adjust based on your layout preferences */
+    width: calc(33.33% - 20px); /* Adjust if you want 2 or 4 images per row */
     max-width: 300px; /* Adjust as needed */
+    padding: 50px;
 }
 
 .gallery-container img {
-    width: 100%;
+    width: 80%;
     height: auto;
     display: block;
 }
 
 .gallery-container figcaption {
+    width: 75%;
     text-align: center;
     padding: 10px 5px;
     font-size: 0.9em;
     color: #666;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .gallery-container figure {
-        width: calc(50% - 20px);
-    }
-
-    .load-more-btn, .show-less-btn {
-        padding: 20px;
-        font-size: 18px;
-    }
-}
-
-@media (max-width: 480px) {
-    .gallery-container figure {
-        width: 100%;
-    }
-}
-
-/* Typography */
-h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
-    margin-top: 2rem;
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
-}
-
-h1 {
-    font-size: 3rem;
-    color: #2c3e50;
-}
-
-h2 {
-    font-size: 2.25rem;
-    color: #34495e;
-}
-
-h3 {
-    font-size: 1.75rem;
-    color: #7f8c8d;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-    .post-header, .post-content {
-        padding: 2rem 2.5rem;
-    }
-
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    h2 {
-        font-size: 2rem;
-    }
-
-    h3 {
-        font-size: 1.5rem;
-    }
-
-    p, .post-intro {
-        font-size: 1.1rem;
-    }
-}
-
-/* Footer Styles */
+/* Footer styles */
 footer {
     background-color: #000000; /* Black background */
     color: #ffffff; /* White text */
@@ -561,22 +431,6 @@ footer p {
     width: auto;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    footer .container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    footer p {
-        margin-bottom: 10px;
-    }
-
-    #footer-logo {
-        height: 25px; /* Slightly smaller on mobile */
-    }
-}
-
 .post-content figure {
     margin: 20px 0;
     text-align: center;
@@ -593,13 +447,6 @@ footer p {
     margin-top: 10px;
     font-size: 0.9em;
     color: #666;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .post-content-image {
-        width: 100%;
-    }
 }
 
 /* Darker color for links and other blue elements */
@@ -623,41 +470,13 @@ a:hover, .blog-post a:hover, .post-content a:hover {
     color: #003366; /* Dark blue for headers */
 }
 
-/* If you have any specific blue backgrounds, you can change them here */
-.blue-background {
-    background-color: #004080; /* Adjust this to the shade you prefer */
-}
-
-/* If you're using any blue buttons, you can style them like this */
-.blue-button {
-    background-color: #0056b3;
-    color: white;
-}
-
-.blue-button:hover {
-    background-color: #003d82;
-}
-
-/* Product link styles */
-.product-link {
-    color: #0056b3; /* Adjust color as needed */
-    text-decoration: none;
-    border-bottom: 1px dotted #0056b3; /* Subtle underline */
-}
-
-.product-link:hover {
-    color: #003d82;
-    border-bottom: 1px solid #003d82;
-}
-
 /* Affiliate disclosure styles */
 .affiliate-disclosure {
     font-size: 0.9em;
-    color: #666;
-    background-color: #f8f8f8;
+    color: #ffffff;
     padding: 10px;
     border-radius: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .post-header h1 {
@@ -693,21 +512,6 @@ a:hover, .blog-post a:hover, .post-content a:hover {
 
 .about-content p:last-child {
     margin-bottom: 0;
-}
-
-@media (max-width: 768px) {
-    #about {
-        padding: 40px 0;
-    }
-
-    #about h2 {
-        font-size: 1.8em;
-    }
-
-    .about-content p {
-        font-size: 1em;
-        line-height: 1.5;
-    }
 }
 
 #contact {
@@ -762,4 +566,248 @@ html {
 img {
     max-width: 100%;
     height: auto;
+}
+
+/* Center post content */
+.post {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.post-content {
+    max-width: 100%;
+    padding: 15px;
+}
+
+.post img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Styles for mobile and tablet devices */
+@media (max-width: 962px) {
+    body {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    .post-content h3 {
+        font-size: 20px;
+    }
+
+    .post-content p {
+        font-size: 16px;
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        margin-bottom: 1rem;
+    }
+
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .main-nav li {
+        margin: 0.5rem;
+    }
+
+    .pinterest-btn {
+        margin-top: 0.5rem;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    .post {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .post img {
+        height: auto;
+    }
+
+    .post-content {
+        padding: 10px;
+        margin-left: -15px;
+    }
+
+    .load-more-btn, .show-less-btn {
+        width: 100%;
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    .button-container {
+        padding: 10px 0;
+    }
+
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+        font-size: 24px;
+        padding: 10px;
+    }
+
+    .mobile-nav {
+        display: none;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+    }
+
+    .mobile-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .mobile-nav ul li {
+        border-bottom: 1px solid #444;
+    }
+
+    .mobile-nav ul li a {
+        display: block;
+        padding: 10px;
+        color: white;
+        text-decoration: none;
+    }
+
+    #menu-toggle:checked + .menu-icon + .mobile-nav {
+        display: block;
+    }
+
+    #posts-container {
+        flex-direction: column;
+    }
+
+    .logo img {
+        height: 30px; /* Adjust this value as needed */
+    }
+
+    .main-nav ul li {
+        margin-left: 10px;
+    }
+
+    .main-nav ul li a {
+        font-size: 14px;
+    }
+
+    .pinterest-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* General responsive styles */
+    .blog-post {
+        padding: 15px;
+    }
+
+    .post-header h1 {
+        font-size: 24px;
+    }
+
+    .post-content p, .post-content ul, .post-content ol {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .post-content img {
+        width: 100%;
+        height: auto;
+    }
+
+    .post-content figure {
+        margin: 15px 0;
+    }
+
+    .post-content figcaption {
+        font-size: 14px;
+    }
+
+    /* Adjust table styles for mobile */
+    .post-content table {
+        width: 100%;
+        overflow-x: auto;
+        display: block;
+    }
+
+    /* Adjust blockquote styles */
+    .post-content blockquote {
+        margin: 15px 0;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    /* Adjust heading sizes */
+    .post-content h2 {
+        font-size: 22px;
+    }
+
+    .post-content h3 {
+        font-size: 20px;
+    }
+
+    .post-content h4 {
+        font-size: 18px;
+    }
+
+    .gallery-container {
+        flex-direction: column;
+    }
+
+    .gallery-container figure {
+        padding: 25px;
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* Ensure the post content container has a defined width */
+.post-content {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding-right: 20px; /* Increase right padding */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+}
+
+/* Force all elements inside post-content to respect container width */
+.post-content * {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Ensure images are responsive */
+.post-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Handle tables that might be too wide */
+.post-content table {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    display: block;
+}
+
+/* Adjust any fixed-width elements */
+.post-content [style*="width"] {
+    width: auto !important;
+    max-width: 100% !important;
 }
