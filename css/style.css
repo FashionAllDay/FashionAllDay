@@ -7,9 +7,9 @@ body {
     margin: 0;
     padding: 0;
     font-size: 16px;
-    line-height: 1.5;
 }
 
+/* Container */
 .container {
     width: 100%;
     padding-left: 15px;
@@ -61,6 +61,8 @@ li {
     top: 0;
     z-index: 1000;
     padding: 20px 0;
+    position: sticky;
+    margin-top: -60px;
 }
 
 .header-content {
@@ -181,17 +183,38 @@ li {
     }
 }
 
-/* Refined post styles */
+header {
+    top: 0; /* Stick to the top of the viewport */
+    background-color: white; /* Set a background color */
+    z-index: 1000; /* Ensure it stays above other content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: add a shadow for better visibility */
+}
+
+/* Optional: Add padding to the body to prevent content from hiding behind the sticky header */
+body {
+    padding-top: 60px; /* Adjust based on your header height */
+}
+
+#posts-container {
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow wrapping if necessary */
+    justify-content: flex-start; /* Align items to the start */
+    margin: 20px 0; /* Add some margin around the container */
+}
+
 .post {
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: box-shadow 0.3s ease;
+    flex: 1 1 300px; /* Allow posts to grow and shrink, with a base width of 300px */
+    margin: 10px; /* Space between posts */
+    max-width: 400px; /* Set a maximum width for each post */
+    background-color: #ffffff; /* Optional: background color for posts */
+    border: 1px solid #e0e0e0; /* Optional: border for posts */
+    border-radius: 8px; /* Optional: rounded corners */
+    overflow: hidden; /* Prevent overflow */
+    transition: box-shadow 0.3s ease; /* Optional: add transition for hover effect */
 }
 
 .post:hover {
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow effect on hover */
 }
 
 .post img {
@@ -386,25 +409,24 @@ li {
     justify-content: center;
 }
 
+/* Gallery Container Styles */
+.gallery-container {
+    display: flex;
+    justify-content: center; /* Center the images horizontally */
+    flex-wrap: wrap; /* Allow images to wrap to the next line */
+    margin: 20px 0; /* Add some vertical spacing */
+}
+
 .gallery-container figure {
-    margin: 0;
-    width: calc(33.33% - 20px); /* Adjust if you want 2 or 4 images per row */
-    max-width: 300px; /* Adjust as needed */
-    padding: 50px;
+    margin: 80px; /* Space between figures */
+    text-align: center; /* Center the caption text */
+    flex: 1 1 200px; /* Allow figures to grow and shrink, with a base width of 200px */
+    max-width: 200px; /* Set a maximum width for each figure */
 }
 
 .gallery-container img {
-    width: 80%;
-    height: auto;
-    display: block;
-}
-
-.gallery-container figcaption {
-    width: 75%;
-    text-align: center;
-    padding: 10px 5px;
-    font-size: 0.9em;
-    color: #666;
+    width: 100%; /* Make images fill the figure */
+    height: auto; /* Maintain aspect ratio */
 }
 
 /* Footer styles */
@@ -567,42 +589,44 @@ img {
     max-width: 100%;
     height: auto;
 }
-
-/* Center post content */
-.post {
-    display: flex;
-    flex-direction: column;
-
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .post {
+        flex: 1 1 100%; /* Make posts full width on small screens */
+        max-width: 100%; /* Allow posts to be full width */
+    }
 }
-
-.post-content {
-    max-width: 100%;
-    padding: 15px;
-}
-
-.post img {
-    max-width: 100%;
-    height: auto;
-}
-
 /* Styles for mobile and tablet devices */
 @media (max-width: 962px) {
     body {
         font-size: 18px;
         line-height: 1.6;
     }
+    
+    .post-content {
+        padding: 10px; /* Ensure there's padding for content */
+        display: block; /* Ensure the content is displayed */
+    }
 
     .post-content h3 {
-        font-size: 20px;
+        font-size: 20px; /* Adjust heading size */
     }
 
     .post-content p {
-        font-size: 16px;
+        display: block; /* Ensure paragraphs are displayed */
+        margin: 0; /* Reset margin if necessary */
+        font-size: 14px; /* Adjust font size for mobile */
+        line-height: 1.5; /* Improve readability */
     }
+
 
     .header-content {
         flex-direction: column;
         align-items: center;
+    }
+
+    .site-header{
+        position:static;
     }
 
     .logo {
@@ -763,13 +787,12 @@ img {
     }
 
     .gallery-container {
-        flex-direction: column;
+        padding: 0 5%; /* Adjust padding for smaller screens */
     }
 
     .gallery-container figure {
-        padding: 25px;
-        width: 100%;
-        max-width: 100%;
+        flex: 1 1 100%; /* Make figures take full width on mobile */
+        max-width: 100%; /* Allow figures to be full width */
     }
 }
 
@@ -782,7 +805,6 @@ img {
     overflow-wrap: break-word;
     word-wrap: break-word;
     word-break: break-word;
-    hyphens: auto;
 }
 
 /* Force all elements inside post-content to respect container width */

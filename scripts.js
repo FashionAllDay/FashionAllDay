@@ -38,11 +38,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     loadMoreBtn.addEventListener('click', function() {
-        newPost = document.createElement('div');
-        newPost.className = 'post';
-        newPost.innerHTML = `
+        // Create new post for post4.html
+        const newPost4 = document.createElement('div');
+        newPost4.className = 'post';
+        newPost4.innerHTML = `
             <a href="post4.html">
-                <img src="images/DiorB.jpg" alt="Post Image">
+                <img src="images/DiorBn.jpg" alt="Post Image">
                 <div class="post-content">
                     <h3>Best Men's Fragrances for 2024: Elevate Your Scent Game</h3>
                     <p>As we enter 2024, men's fragrance trends are evolving toward bolder, more refined scents. From everyday wear to special occasions, the right fragrance can enhance your style and leave a lasting impression.</p>
@@ -53,12 +54,32 @@ document.addEventListener('DOMContentLoaded', function() {
             </a>
         `;
 
-        postsContainer.appendChild(newPost);
+        // Append post4 to the posts container
+        postsContainer.appendChild(newPost4);
+
+        // Create new post for post5.html
+        const newPost5 = document.createElement('div');
+        newPost5.className = 'post';
+        newPost5.innerHTML = `
+            <a href="post5.html">
+                <img src="images/autumn.JPG" alt="Post Image">
+                <div class="post-content">
+                    <h3>Men's Fall Fashion Guide 2024: Essential Trends and Style Tips</h3>
+                    <p>As the leaves start to fall, it's time to refresh your wardrobe for the cooler months ahead. Men's fall fashion in 2024 combines classic styles with modern twists, blending functionality with aesthetics.</p>
+                    <div class="post-footer">
+                        <span class="author">By FashionAllDay</span>
+                    </div>
+                </div>
+            </a>
+        `;
+
+        // Append post5 to the posts container
+        postsContainer.appendChild(newPost5);
         loadMoreBtn.style.display = 'none';
         showLessBtn.style.display = 'block';
 
         setTimeout(() => {
-            smoothScrollTo(newPost);
+            smoothScrollTo(newPost4);
         }, 100);
     });
 
