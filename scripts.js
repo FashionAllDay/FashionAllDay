@@ -75,6 +75,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Append post5 to the posts container
         postsContainer.appendChild(newPost5);
+
+        // Create new post for post6.html
+        const newPost6 = document.createElement('div');
+        newPost6.className = 'post';
+        newPost6.innerHTML = `
+            <a href="post6.html">
+                <img src="images/leaf.jpg" alt="Post Image">
+                <div class="post-content">
+                    <h3>The Best Budget Men's Fall Fashion 2024: Amazon Edition</h3>
+                    <p>Looking stylish this fall doesn't have to cost much. Whether you're revamping your wardrobe or looking for affordable pieces to keep you warm, these picks will help you achieve the fall look without breaking the bank.</p>
+                    <div class="post-footer">
+                        <span class="author">By FashionAllDay</span>
+                    </div>
+                </div>
+            </a>
+        `;
+
+        // Append post6 to the posts container
+        postsContainer.appendChild(newPost6);
+
         loadMoreBtn.style.display = 'none';
         showLessBtn.style.display = 'block';
 
