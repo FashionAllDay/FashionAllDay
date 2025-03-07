@@ -81,10 +81,10 @@ document.addEventListener('DOMContentLoaded', function() {
         newPost6.className = 'post';
         newPost6.innerHTML = `
             <a href="post6.html">
-                <img src="images/leaf.jpg" alt="Post Image">
+                <img src="images/winterbanner.jpg" alt="Post Image">
                 <div class="post-content">
-                    <h3>The Best Budget Men's Fall Fashion 2024: Amazon Edition</h3>
-                    <p>Looking stylish this fall doesn't have to cost much. Whether you're revamping your wardrobe or looking for affordable pieces to keep you warm, these picks will help you achieve the fall look without breaking the bank.</p>
+                    <h3>Mastering Men's Winter Fashion: Stay Warm & Stylish</h3>
+                    <p>Winter is here, and that means it's time to upgrade your wardrobe with stylish yet functional pieces. This guide will help you master winter style while staying warm and comfortable.</p>
                     <div class="post-footer">
                         <span class="author">By FashionAllDay</span>
                     </div>
